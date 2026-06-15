@@ -8,3 +8,6 @@
 - Lombok
 - SpringDocs OpenAPI UI
 - Spring Boot Starter Test
+
+## TODO:
+1. Add Hello World.
