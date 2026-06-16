@@ -8,6 +8,9 @@ public class MyFirstAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyFirstAppApplication.class, args);
+		System.out.println("Hello World");
+		// Input and then output input code:
+
 	}
 
 }
