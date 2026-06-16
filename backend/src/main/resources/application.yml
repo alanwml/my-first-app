@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: my-first-app
+
+  h2.console:
+    enabled: true
+
+  datasource:
+    url: JDBC:h2:file:./data/h2db
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
