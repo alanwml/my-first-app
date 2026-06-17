@@ -6,7 +6,7 @@ spring:
     enabled: true
 
   datasource:
-    url: JDBC:h2:file:./data/h2db
+    url: jdbc:h2:file:./data/h2db
     driverClassName: org.h2.Driver
     username: sa
     password:

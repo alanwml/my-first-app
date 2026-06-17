@@ -1,0 +1,18 @@
+2026-06-17 13:30:03.563814+08:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM BOOKS BOOKS [*]USERS"; SQL statement:
+SELECT * FROM BOOKS BOOKS USERS [42000-232]
+2026-06-17 13:30:18.995984+08:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM BOOKS\000d\000a\000d\000a[*]SELECT * FROM USERS"; SQL statement:
+SELECT * FROM BOOKS
+
+SELECT * FROM USERS [42000-232]
+2026-06-17 13:30:19.751464+08:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM BOOKS\000d\000a\000d\000a[*]SELECT * FROM USERS"; SQL statement:
+SELECT * FROM BOOKS
+
+SELECT * FROM USERS [42000-232]
+2026-06-17 13:30:21.877200+08:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM BOOKS\000d\000a\000d\000a[*]SELECT * FROM USERS"; SQL statement:
+SELECT * FROM BOOKS
+
+SELECT * FROM USERS [42000-232]

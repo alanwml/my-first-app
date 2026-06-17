@@ -1,13 +1,12 @@
 package com.ngts.my_first_app.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
-
+import lombok.*;
 import java.util.Date;
 
 @Entity
 @Data
+@NoArgsConstructor
 @Table(name = "users")
 public class User {
 
