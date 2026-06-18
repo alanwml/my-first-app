@@ -3,15 +3,18 @@ package com.ngts.my_first_app.service.Impl;
 import com.ngts.my_first_app.model.User;
 import com.ngts.my_first_app.repository.UserRepository;
 import com.ngts.my_first_app.service.UserService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Slf4j
+@RequiredArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
-    private UserRepository userRepository;
+
+    private final UserRepository userRepository;
 
     @Override
     public User createUser(User user) {

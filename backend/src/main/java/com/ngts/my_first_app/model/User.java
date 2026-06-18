@@ -11,7 +11,7 @@ import java.util.Date;
 public class User {
 
     @Id // This means the Primary Key (Unique Identifier)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "name", length = 50, nullable = false)
