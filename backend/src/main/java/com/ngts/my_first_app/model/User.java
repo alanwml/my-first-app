@@ -2,7 +2,7 @@ package com.ngts.my_first_app.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -14,15 +14,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name", length = 50, nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "age", nullable = false)
+    @Column(name = "password", nullable = false)
+    private String password;
     private int age;
-
-    @Column(name = "email", length = 100, nullable = false, unique = true)
     private String email;
-
-    @Column(name = "reg_date", nullable = false)
-    private Date registrationDate;
+    private LocalDateTime registrationDate;
 }
