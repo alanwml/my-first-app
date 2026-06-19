@@ -11,18 +11,17 @@ import java.util.Map;
 @RestController
 public class HealthController {
 
-    private final long startTime = System.currentTimeMillis();
+    private final double startTime = System.currentTimeMillis();
 
     @GetMapping({"/","/health","/healthz"})
     public Map<String, Object> healthCheck() {
         log.info("[GET] Health check endpoint Called.");
-//        log.debug("NGTS BANZAI!");
-        long upTime = System.currentTimeMillis();
+        double upTime = (System.currentTimeMillis() - startTime) / 1000.0;
 
         Map<String, Object> response = new HashMap<>();
 
         response.put("status", "healthy");
-        response.put("uptime", upTime - startTime + "ms");
+        response.put("uptime", upTime + "s");
         return response;
     }
 }

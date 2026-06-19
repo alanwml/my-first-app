@@ -39,8 +39,6 @@ public class UserController {
         log.info("[PUT] Updating user: {}", user);
         return userService.updateUser(id, user);
     }
-//
-//    @PatchMapping
 
     @DeleteMapping("/{id}")
     public Map<String, Object> deleteUser(@PathVariable int id) {
