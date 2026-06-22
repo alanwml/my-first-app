@@ -2,15 +2,12 @@ package com.ngts.my_first_app.DTO;
 
 import jakarta.validation.constraints.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDateTime;
 
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
-@AllArgsConstructor
-public class UserRegisterRequestDTO {
+public class UserRequestDTO {
 
     // Name must be Not Blank.
     // No Nulls, Not Empty, At least 1 char.
@@ -30,8 +27,4 @@ public class UserRegisterRequestDTO {
     @NotBlank(message = "Email cannot be blank.")
     @Email(message = "Email should be valid.")
     private String email;
-
-    // registrationDate will be auto-created.
-    @CreationTimestamp
-    private LocalDateTime registrationDate;
 }

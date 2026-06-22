@@ -2,6 +2,8 @@ package com.ngts.my_first_app.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,5 +23,8 @@ public class User {
     private String password;
     private int age;
     private String email;
+
+    // registrationDate will be auto-created.
+    @CreationTimestamp
     private LocalDateTime registrationDate;
 }

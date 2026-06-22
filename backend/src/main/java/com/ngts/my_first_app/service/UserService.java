@@ -1,5 +1,7 @@
 package com.ngts.my_first_app.service;
 
+import com.ngts.my_first_app.DTO.UserRequestDTO;
+import com.ngts.my_first_app.DTO.UserResponseDTO;
 import com.ngts.my_first_app.model.User;
 import java.util.List;
 
@@ -8,14 +10,14 @@ import java.util.List;
 // but the Implementation code is in /impl part.
 public interface UserService {
     // C. Creation Methods.
-    User createUser(User user);
+    UserResponseDTO createUser(UserRequestDTO request);
 
     // R. Reading Methods.
-    List<User> getAllUsers();
-    User getUserById(int id);
+    List<UserResponseDTO> getAllUsers();
+    UserResponseDTO getUserById(int id);
 
     // U. Updating Methods.
-    User updateUser(int id, User user);
+    UserResponseDTO updateUser(int id, UserRequestDTO request);
 
     // D. Deleting Methods.
     void deleteUser(int id);

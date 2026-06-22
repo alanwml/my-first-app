@@ -1,7 +1,10 @@
 package com.ngts.my_first_app.controller;
 
+import com.ngts.my_first_app.DTO.UserRequestDTO;
+import com.ngts.my_first_app.DTO.UserResponseDTO;
 import com.ngts.my_first_app.model.User;
 import com.ngts.my_first_app.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,27 +22,27 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        log.info("[POST] Creating user: {}", user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(user));
+    public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO request) {
+        log.info("[POST] Creating user: {}", request.getName());
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(request));
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> getUsers() {
+    public ResponseEntity<List<UserResponseDTO>> getUsers() {
         log.info("[GET] Getting all users.");
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable int id) {
+    public ResponseEntity<UserResponseDTO> getUserById(@PathVariable int id) {
         log.info("[GET] Getting user with id: {}", id);
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User user) {
-        log.info("[PUT] Updating user: {}", user);
-        return ResponseEntity.ok(userService.updateUser(id, user));
+    public ResponseEntity<UserResponseDTO> updateUser(@PathVariable int id, @Valid @RequestBody UserRequestDTO request) {
+        log.info("[PUT] Updating user: {}", request);
+        return ResponseEntity.ok(userService.updateUser(id, request));
     }
 
     @DeleteMapping("/{id}")
