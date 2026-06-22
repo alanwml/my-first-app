@@ -2,7 +2,6 @@ package com.ngts.my_first_app.controller;
 
 import com.ngts.my_first_app.DTO.UserRequestDTO;
 import com.ngts.my_first_app.DTO.UserResponseDTO;
-import com.ngts.my_first_app.model.User;
 import com.ngts.my_first_app.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

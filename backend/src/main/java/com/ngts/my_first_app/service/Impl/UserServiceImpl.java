@@ -8,10 +8,8 @@ import com.ngts.my_first_app.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
 
 @Slf4j
 @RequiredArgsConstructor
