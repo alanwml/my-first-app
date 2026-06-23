@@ -25,7 +25,6 @@ public class UserRepositoryTest {
         user.setEmail("jpadoe@test.com");
 
         Date now = new Date();
-        user.setRegistrationDate(now);
 
         // Act
         User savedUser = userRepository.save(user);

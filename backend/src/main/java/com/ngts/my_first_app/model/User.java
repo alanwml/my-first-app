@@ -22,6 +22,9 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
     private int age;
+
+    // Email should be Unique to prevent same email Writes.
+    @Column(name = "email", unique = true)
     private String email;
 
     // registrationDate will be auto-created.

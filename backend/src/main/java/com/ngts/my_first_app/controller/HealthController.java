@@ -1,5 +1,6 @@
 package com.ngts.my_first_app.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
+@Tag(name = "Health API Endpoints")
 @RestController
 public class HealthController {
 
