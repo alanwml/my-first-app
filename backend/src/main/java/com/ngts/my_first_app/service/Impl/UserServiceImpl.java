@@ -2,6 +2,7 @@ package com.ngts.my_first_app.service.Impl;
 
 import com.ngts.my_first_app.DTO.UserRequestDTO;
 import com.ngts.my_first_app.DTO.UserResponseDTO;
+import com.ngts.my_first_app.exception.UserNotFoundException;
 import com.ngts.my_first_app.model.User;
 import com.ngts.my_first_app.repository.UserRepository;
 import com.ngts.my_first_app.service.UserService;
@@ -71,7 +72,7 @@ public class UserServiceImpl implements UserService {
                         .age(user.getAge())
                         .email(user.getEmail())
                         .build())
-                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
     }
 
     @Override
@@ -80,7 +81,7 @@ public class UserServiceImpl implements UserService {
         // 1. Find the current User by ID.
         log.debug("[DEBUG] - Finding User with ID: {}", id);
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
 
         log.debug("[DEBUG] - User Found: {}", user);
 
