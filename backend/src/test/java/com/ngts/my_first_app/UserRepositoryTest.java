@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import java.util.Date;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DataJpaTest
 public class UserRepositoryTest {
@@ -16,20 +16,25 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
+    // Verifies the repository can persist a valid user and populate generated fields.
     @Test
     void testSaveUser() {
         // Arrange
         User user = new User();
         user.setName("JPA Doe");
+        user.setPassword("secret123");
         user.setAge(31);
         user.setEmail("jpadoe@test.com");
-
-        Date now = new Date();
 
         // Act
         User savedUser = userRepository.save(user);
 
         // Assert
-        assertEquals(1, savedUser.getId());
+        assertTrue(savedUser.getId() > 0);
+        assertEquals("JPA Doe", savedUser.getName());
+        assertEquals("secret123", savedUser.getPassword());
+        assertEquals(31, savedUser.getAge());
+        assertEquals("jpadoe@test.com", savedUser.getEmail());
+        assertNotNull(savedUser.getRegistrationDate());
     }
 }
